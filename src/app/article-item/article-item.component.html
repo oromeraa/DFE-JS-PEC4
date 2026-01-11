@@ -1,0 +1,17 @@
+<div class="article-card" [class.on-sale]="article.isOnSale">
+    
+    <img [src]="article.imageUrl" [alt]="article.name" class="product-img">
+    
+    <h3>{{ article.name }}</h3>
+    
+    <p [ngClass]="{ 'not-on-sale': !article.isOnSale }" class="price">{{ article.price }} €</p>
+    
+    <div *ngIf="article.isOnSale" class="quantity-controls">
+        <!-- Desactivar botón cuando la cantidad es 0 -->
+        <button class="btn btn-secondary rounded-circle justify-content-center lh-1" (click)="decreaseQuantity()" [disabled]="article.quantityInCart === 0">-</button>
+        
+        <span class="quantity">{{ article.quantityInCart }}</span>
+        
+        <button class="btn btn-secondary rounded-circle justify-content-center lh-1"  (click)="increaseQuantity()">+</button>
+    </div>
+</div>

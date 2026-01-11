@@ -1,0 +1,71 @@
+<div class="form-container">
+  <h1 class="h3 mb-3 fw-normal">Nuevo artículo (Reactive)</h1>
+
+  <div class="form-group">
+    <form [formGroup]="articleForm" (ngSubmit)="createArticle()">
+
+        <div class="form-floating" id="article-name">
+            <input class="form-control"
+                type="text"
+                placeholder="Nombre del artículo"
+                formControlName="name">
+            <label for="name">Nombre del artículo</label>
+            <div *ngIf="articleForm.get('name')?.invalid && (submitted || articleForm.get('name')?.dirty)" class="error-msg">
+                <div *ngIf="articleForm.get('name')?.errors?.['required']">
+                    Nombre obligatorio
+                </div>
+                <div *ngIf="articleForm.get('name')?.errors?.['pattern']">
+                    Nombre inválido
+                </div>
+                <div *ngIf="articleForm.get('name')?.errors?.['nonAllowedName']">
+                    Nombre no permitido
+                </div>
+            </div>
+        </div>
+
+        <div class="form-floating" id="article-price">
+            <input class="form-control"
+                type="number"
+                placeholder="Precio"
+                formControlName="price"
+                min="0.1"
+                step="0.01">
+            <label for="price">Precio</label>    
+            <div *ngIf="articleForm.get('price')?.invalid && (submitted || articleForm.get('price')?.dirty)" class="error-msg">
+                <div *ngIf="articleForm.get('price')?.errors?.['required']">
+                    Precio obligatorio
+                </div>
+                <div *ngIf="articleForm.get('price')?.errors?.['min']">
+                    Precio no puede ser negativo
+                </div>
+            </div>  
+        </div>
+
+        <div class="form-floating" id="article-imageUrl">
+            <input class="form-control"
+                type="text"
+                placeholder="URL de la Imagen"
+                formControlName="imageUrl"
+                pattern="^https?:\/\/(www\.)?[a-zA-Z0-9\-]+\.[a-zA-Z]{2,3}(\/[a-zA-Z0-9\-]+(\.[a-zA-Z]+)?)*$">
+            <label for="imageUrl">URL de la Imagen</label>
+             <div *ngIf="articleForm.get('imageUrl')?.invalid && (submitted || articleForm.get('imageUrl')?.dirty)" class="valid-msg">
+                <div *ngIf="articleForm.get('imageUrl')?.errors?.['required']">
+                    URL obligatorio
+                </div>
+                <div *ngIf="articleForm.get('imageUrl')?.errors?.['pattern']">
+                    URL inválida
+                </div>
+            </div>
+        </div>
+
+        <div class="form-check text-start my-3">
+            <label for="onSale">
+                <input type="checkbox"
+                    formControlName="onSale">
+                En stock
+            </label>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Crear Artículo</button>
+    </form>
+</div>

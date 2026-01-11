@@ -1,0 +1,22 @@
+.form-container {
+    max-width: 500px;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #474747;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#article-name .ng-valid.ng-touched,
+#article-price .ng-valid.ng-touched,
+#article-imageUrl .ng-valid.ng-touched {
+    background-color: lightgreen;
+}
+
+#article-name .ng-invalid.ng-touched,
+#article-price .ng-invalid.ng-touched,
+#article-imageUrl .ng-invalid.ng-touched {
+    background-color: pink;
+}
