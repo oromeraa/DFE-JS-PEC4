@@ -11,20 +11,7 @@ import { ArticleServiceService } from '../article-service/article-service.servic
             <h2>Lista de productos</h2>     
             
             <div style="text-align: center; margin-bottom: 20px;">
-                <input type="text" #searchBox placeholder="Filtrar por nombre...">
-                <button (click)="onSearch(searchBox.value)">Buscar</button>
-            </div>
-
-            <div style="text-align: center; margin-bottom: 20px;">
                 <input type="text" #searchBox placeholder="Filtrar por nombre..." (input)="onLiveSearch($event)">
-            </div>
-            
-            <div class="articles-grid">
-                <app-article-item
-                *ngFor="let article of (articles$ | async)"
-                [article]="article"
-                (quantityChange)="onQuantityChange($event)">
-                </app-article-item>
             </div>
             
             <div class="articles-grid">
