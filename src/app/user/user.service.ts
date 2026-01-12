@@ -7,8 +7,8 @@ import { Observable, tap } from 'rxjs';
 })
 export class UserService {
 
-  private apiLogin = 'http://localhost:3000/user/login';
-  private apiRegister = 'http://localhost:3000/user/register';
+  public readonly apiLogin = 'http://localhost:3000/api/user/login';
+  public readonly apiRegister = 'http://localhost:3000/api/user/register';
 
   constructor(private http: HttpClient) { }
 

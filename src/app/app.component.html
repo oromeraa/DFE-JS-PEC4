@@ -20,19 +20,15 @@
     --gray-700: oklch(36.98% 0.014 302.71);
     --gray-400: oklch(70.9% 0.015 304.04);
 
-    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
-      180deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
+    --red-to-pink-to-purple-vertical-gradient: linear-gradient(180deg,
+        var(--orange-red) 0%,
+        var(--vivid-pink) 50%,
+        var(--electric-violet) 100%);
 
-    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
-      90deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
+    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(90deg,
+        var(--orange-red) 0%,
+        var(--vivid-pink) 50%,
+        var(--electric-violet) 100%);
 
     --pill-accent: var(--bright-blue);
 
@@ -133,9 +129,11 @@
   .pill-group .pill:nth-child(6n + 1) {
     --pill-accent: var(--bright-blue);
   }
+
   .pill-group .pill:nth-child(6n + 2) {
     --pill-accent: var(--french-violet);
   }
+
   .pill-group .pill:nth-child(6n + 3),
   .pill-group .pill:nth-child(6n + 4),
   .pill-group .pill:nth-child(6n + 5) {
@@ -178,30 +176,35 @@
 </style>
 
 <main class="main">
-    <div class="header">
-        <app-navbar (toSection)="goToSection($event)"></app-navbar>        
+  <div class="header">
+    <app-navbar (toSection)="goToSection($event)"></app-navbar>
+  </div>
+
+  <div class="content">
+    <div *ngIf="currentSection === 'login'">
+      <app-login></app-login>
     </div>
 
-    <div class="content">
-        <div *ngIf="currentSection === 'home' || currentSection === 'articles'">
-            <app-article-list></app-article-list>
-        </div>
-
-        <div *ngIf="currentSection === 'new-template'">
-          <app-article-new-template></app-article-new-template>
-        </div>
-
-        <div *ngIf="currentSection === 'new-reactive'">
-          <app-article-new-reactive></app-article-new-reactive>
-        </div>
-
-
+    <div *ngIf="currentSection === 'register'">
+      <app-register></app-register>
     </div>
 
-    <div class="footer">
-      <p>2025 Romera Aller, Omar</p>
+    <div *ngIf="currentSection === 'article-list'">
+      <app-article-list></app-article-list>
     </div>
-    
+
+    <div *ngIf="currentSection === 'article-new'">
+      <app-article-new-reactive></app-article-new-reactive>
+    </div>
+
+
+  </div>
+
+  <div class="footer">
+    <p>2026 Romera Aller, Omar</p>
+    <p>FELIZ AÑO NUEVO</p>
+  </div>
+
 </main>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
@@ -211,5 +214,3 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-

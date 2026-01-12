@@ -38,7 +38,7 @@ import { articleAppInterceptor } from './article-app/article-app.interceptor';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [UserService, UserStoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

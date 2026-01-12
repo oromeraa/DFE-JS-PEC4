@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Validators, FormBuilder } from '@angular/forms';
 import { ValidatorFn, AbstractControl } from '@angular/forms';
-import { UserService } from '../../user/user.service';
-import { Router } from '@angular/router';
+import { UserService } from '../user/user.service';
 
 
 @Component({
@@ -17,8 +16,7 @@ export class LoginComponent {
 
   constructor(
     private fb: FormBuilder,
-    private userService: UserService,
-    private router: Router
+    private userService: UserService
   ) {
     this.createForm();
   }
@@ -42,7 +40,6 @@ export class LoginComponent {
       this.userService.login(this.loginForm.value).subscribe({
         next: () => {
           console.log('Logueado correctamente');
-          this.router.navigate(['/article-list']);
         },
         error: (err) => {
           console.error('Error al loguear:', err);
