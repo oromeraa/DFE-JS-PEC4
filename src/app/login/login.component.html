@@ -1,0 +1,22 @@
+<div class="form-container">
+    <h1 class="h3 mb-3 fw-normal">Iniciar sesión</h1>
+
+    <div class="form-group">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-floating" id="username-login">
+                <label for="username">Username:</label>
+                <input id="username" type="text" formControlName="username">
+            </div>
+
+            <div class="form-floating" id="password-login">
+                <label for="password">Password:</label>
+                <input id="password" type="password" formControlName="password">
+            </div>
+
+            <button class="btn btn-primary" type="submit">
+                Login
+            </button>
+        </form>
+    </div>
+</div>

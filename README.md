@@ -13,5 +13,7 @@ Cambiado la ficha del artículo para que muestre la imagen por defecto si no hay
 
 NOTA: en una PEC anterior utilicé una api de exchange rates para convertir monedas. Quizás se podría integrar en el proyecto.
 ## Ejercicio 4
+Creado esqueleto de componentes, servicios y interceptores.
+
 ## Ejercicio 5
 ## Conclusiones
