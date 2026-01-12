@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Validators, FormBuilder } from '@angular/forms'; 
+import { Validators, FormBuilder } from '@angular/forms';
 import { ValidatorFn, AbstractControl } from '@angular/forms';
+import { ArticleServiceService } from '../article-service/article-service.service';
 
 @Component({
   selector: 'app-article-new-reactive',
@@ -14,6 +15,7 @@ export class ArticleNewReactiveComponent {
 
   constructor(
     private fb: FormBuilder,
+    private articleService: ArticleServiceService
   ) {
     this.createForm();
   }
@@ -34,7 +36,7 @@ export class ArticleNewReactiveComponent {
         Validators.pattern('^https?:\/\/(www\.)?[a-zA-Z0-9\\-]+\\.[a-zA-Z]{2,3}(\/[a-zA-Z0-9\\-]+(\\.[a-zA-Z]+)?)*$')
       ]),
       onSale: new FormControl(false)
-      }
+    }
     );
   }
 
@@ -45,6 +47,11 @@ export class ArticleNewReactiveComponent {
     this.submitted = true;
     if (this.articleForm.valid) {
       console.log('Artículo nuevo:', this.articleForm.value);
+      this.articleService.create(this.articleForm.value).subscribe(
+        (res) => {
+          console.log('Artículo nuevo:', res);
+        }
+      );
     } else {
       console.error('El formulario contiene errores');
     }
