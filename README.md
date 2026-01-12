@@ -7,7 +7,7 @@ El servidor es un proyecto a parte. Se inicia y devuelve datos a través de la a
 
 NOTA: En la PEC3 utilicé una navbar de bootstrap. Ésta tenía buscador pero no lo utilicé. Quizás se podría integrar en el proyecto.
 
-NOTA2: acabo de darme cuenta que el botón de + y - actualiza la cantidad en el servidor pero no refresca la lista. Hay que hacerlo.
+HECHO -> NOTA2: acabo de darme cuenta que el botón de + y - actualiza la cantidad en el servidor pero no refresca la lista. Hay que hacerlo.
 ## Ejercicio 3
 Cambiado la ficha del artículo para que muestre la imagen por defecto si no hay imagen y el currency utilizando el pipe.
 
