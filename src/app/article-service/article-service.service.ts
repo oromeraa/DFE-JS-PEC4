@@ -16,9 +16,13 @@ export class ArticleServiceService {
     return this.http.get<Article[]>(this.apiArticles);
   }
 
+  getArticlesByName(name: string): Observable<Article[]> {
+    return this.http.get<Article[]>(`${this.apiArticles}?q=${name}`);
+  }
+
   changeQuantity(articleID: number, changeInQuantity: number): Observable<any> {
     const patchProperty = { changeInQuantity: changeInQuantity };
-    return this.http.patch('${this.apiArticles}/${articleID}', patchProperty);
+    return this.http.patch(`${this.apiArticles}/${articleID}`, patchProperty);
   }
 
   create(article: Article): Observable<any> {

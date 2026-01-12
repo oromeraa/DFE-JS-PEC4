@@ -6,8 +6,14 @@ import { ArticleServiceService } from '../article-service/article-service.servic
 @Component({
     selector: 'app-article-list',
     template: `
-        <div class="list-container">
-            <h2>Lista de productos</h2>            
+        <div class="list-container" style="align-items: center">
+            <h2>Lista de productos</h2>     
+            
+            <div style="text-align: center; margin-bottom: 20px;">
+                <input type="text" #searchBox placeholder="Filtrar por nombre...">
+                <button (click)="onSearch(searchBox.value)">Buscar</button>
+            </div>
+            
             <div class="articles-grid">
                 <app-article-item
                 *ngFor="let article of (articles$ | async)"
@@ -39,4 +45,7 @@ export class ArticleListComponent {
         this.articleService.changeQuantity(event.article.id, event.changeInQuantity).subscribe();
     }
 
+    onSearch(name: string): void {
+        this.articles$ = this.articleService.getArticlesByName(name);
+    }
 }
