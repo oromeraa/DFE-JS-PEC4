@@ -46,7 +46,6 @@ export class ArticleNewReactiveComponent {
   createArticle() {
     this.submitted = true;
     if (this.articleForm.valid) {
-      console.log('Artículo nuevo:', this.articleForm.value);
       this.articleService.create(this.articleForm.value).subscribe(
         (res) => {
           console.log('Artículo nuevo:', res);
