@@ -9,7 +9,7 @@
     align-items: center;
 }
 
-#username-login .ng-valid.ng-touched,
+/* #username-login .ng-valid.ng-touched,
 #password-login .ng-valid.ng-touched {
     background-color: lightgreen;
 }
@@ -17,4 +17,4 @@
 #username-login .ng-invalid.ng-touched,
 #password-login .ng-invalid.ng-touched {
     background-color: pink;
-}
+} */

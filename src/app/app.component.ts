@@ -9,7 +9,7 @@ import { UserStoreService } from './user-store/user-store.service';
 })
 export class AppComponent {
   title = 'ecommerce';
-  currentSection: string = 'home';
+  currentSection: string = 'login';
 
   goToSection(section: string): void {
     this.currentSection = section;
@@ -23,5 +23,9 @@ export class AppComponent {
 
   isLoggedIn(): boolean {
     return this.userStoreService.isLogged();
+  }
+
+  logout() {
+    this.userStoreService.logout();
   }
 }

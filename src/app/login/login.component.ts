@@ -35,6 +35,8 @@ export class LoginComponent {
     );
   }
 
+  serverMessage: string = '';
+
   onSubmit() {
     if (this.loginForm.valid) {
       this.userService.login(this.loginForm.value).subscribe({
@@ -43,6 +45,7 @@ export class LoginComponent {
         },
         error: (err) => {
           console.error('Error al loguear:', err);
+          this.serverMessage = err.error.msg;
         }
       }
       );

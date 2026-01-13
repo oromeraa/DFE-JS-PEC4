@@ -184,6 +184,10 @@
 
     <div *ngIf="currentSection === 'login' && isLoggedIn()">
       <h2><strong>Logueado correctamente</strong></h2>
+
+      <button class="btn btn-outline-success" type="submit" (click)="logout()">
+        Logout
+      </button>
     </div>
 
     <div *ngIf="currentSection === 'login' && !isLoggedIn()">

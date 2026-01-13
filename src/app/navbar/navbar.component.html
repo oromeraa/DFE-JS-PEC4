@@ -2,33 +2,42 @@
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <!-- Login -->
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#" (click)="goToSection('login')">
                         Login
                     </a>
                 </li>
+
+                <!-- Registro -->
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#" (click)="goToSection('register')">
                         Registro
                     </a>
                 </li>
+
+                <!-- Lista de artículos -->
                 <li class="nav-item">
                     <a class="nav-link" href="#" (click)="goToSection('article-list')">
                         Lista de artículos
                     </a>
                 </li>
+
+                <!-- Crear artículo -->
                 <li class="nav-item">
                     <a class="nav-link" href="#" (click)="goToSection('article-new')">
                         Crear artículo
                     </a>
                 </li>
             </ul>
-            <form class="d-flex" role="search">
+
+            <!-- Buscador no necesario ahora mismo-->
+            <!-- <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar" />
                 <button class="btn btn-outline-success" type="submit">
                     Buscar
                 </button>
-            </form>
+            </form> -->
         </div>
     </div>
 </nav>
