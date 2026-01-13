@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { UserStoreService } from '../user-store/user-store.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,8 @@ export class UserService {
 
   constructor(
     private http: HttpClient,
-    private userStoreService: UserStoreService
+    private userStoreService: UserStoreService,
+    private router: Router
   ) { }
 
   login(credentials: { username: string, password: string }): Observable<any> {
@@ -30,6 +32,7 @@ export class UserService {
 
   logout(): void {
     this.userStoreService.removeToken();
+    this.router.navigate(['/login']);
   }
 
   isLogged(): boolean {
