@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ArticleItemComponent } from './article-item/article-item.component';
@@ -38,7 +39,13 @@ import { articleAppInterceptor } from './article-app/article-app.interceptor';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [UserService, UserStoreService],
+  providers: [UserService,
+    UserStoreService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: articleAppInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

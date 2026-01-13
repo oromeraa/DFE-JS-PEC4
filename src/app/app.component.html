@@ -181,7 +181,12 @@
   </div>
 
   <div class="content">
-    <div *ngIf="currentSection === 'login'">
+
+    <div *ngIf="currentSection === 'login' && isLoggedIn()">
+      <h2><strong>Logueado correctamente</strong></h2>
+    </div>
+
+    <div *ngIf="currentSection === 'login' && !isLoggedIn()">
       <app-login></app-login>
     </div>
 

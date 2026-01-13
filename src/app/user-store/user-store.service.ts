@@ -5,5 +5,28 @@ import { Injectable } from '@angular/core';
 })
 export class UserStoreService {
 
+  private readonly tokenKey = 'login_token';
+
   constructor() { }
+
+  getToken(): string | null {
+    return localStorage.getItem(this.tokenKey);
+  }
+
+  setToken(token: string): void {
+    localStorage.setItem(this.tokenKey, token);
+  }
+
+  removeToken(): void {
+    localStorage.removeItem(this.tokenKey);
+  }
+
+  logout(): void {
+    this.removeToken();
+  }
+
+  isLogged(): boolean {
+    return this.getToken() !== null;
+  }
+
 }

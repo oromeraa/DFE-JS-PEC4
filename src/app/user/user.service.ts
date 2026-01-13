@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
+import { UserStoreService } from '../user-store/user-store.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,18 +11,17 @@ export class UserService {
   public readonly apiLogin = 'http://localhost:3000/api/user/login';
   public readonly apiRegister = 'http://localhost:3000/api/user/register';
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private userStoreService: UserStoreService
+  ) { }
 
   login(credentials: { username: string, password: string }): Observable<any> {
     return this.http.post(`${this.apiLogin}`, credentials).pipe(
-      tap((response: any) => {
-        localStorage.setItem('login_token', response.token);
+      tap((res: any) => {
+        this.userStoreService.setToken(res.token);
       })
     );
-  }
-
-  logout(): void {
-    localStorage.removeItem('login_token');
   }
 
   register(newUser: { username: string, password: string }): Observable<any> {

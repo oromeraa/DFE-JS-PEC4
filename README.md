@@ -13,7 +13,9 @@ Cambiado la ficha del artículo para que muestre la imagen por defecto si no hay
 
 NOTA: en una PEC anterior utilicé una api de exchange rates para convertir monedas. Quizás se podría integrar en el proyecto.
 ## Ejercicio 4
-Creado esqueleto de componentes, servicios y interceptores.
+Creado esqueleto de componentes, servicios y interceptores. La api de usuarios en el enunciado la entendí mal, es /api/user/login y /api/user/register no /user/login y /user/register. Login y Registro funcionan. Guardamos token correctamente. Interceptor funciona. 
+
+NOTA: un logout estaría bien implementar.
 
 ## Ejercicio 5
 ## Conclusiones

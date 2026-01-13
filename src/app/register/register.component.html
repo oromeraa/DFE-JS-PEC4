@@ -1,1 +1,27 @@
-<p>register works!</p>
+<div class="form-container">
+    <h1 class="h3 mb-3 fw-normal">Registrar usuario</h1>
+
+    <div class="form-group">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-floating" id="username-register">
+                <input class="form-control" id="username" type="text" placeholder="Nombre" formControlName="username">
+                <label for="username">Nuevo usuario</label>
+            </div>
+
+            <div class="form-floating" id="password-register">
+                <input class="form-control" id="password" type="password" placeholder="Password"
+                    formControlName="password">
+                <label for="password">Contraseña</label>
+            </div>
+
+            <button class="btn btn-primary" type="submit">
+                Registrar
+            </button>
+
+            <div *ngIf="message" class="alert">
+                {{ message }}
+            </div>
+        </form>
+    </div>
+</div>
