@@ -1,6 +1,8 @@
 <div class="article-card" [class.on-sale]="article.isOnSale">
 
-    <img [src]="article.imageUrl | defaultImage" [alt]="article.name" class="product-img">
+    <a [routerLink]="/articles/{{article.id}}" routerLinkActive="active">
+        <img [src]="article.imageUrl | defaultImage" [alt]="article.name" class="product-img">
+    </a>
 
     <h3>{{ article.name }}</h3>
 

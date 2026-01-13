@@ -2,7 +2,7 @@
     <h1 class="h3 mb-3 fw-normal">Registrar usuario</h1>
 
     <div class="form-group">
-        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
 
             <div class="form-floating" id="username-register">
                 <input class="form-control" id="username" type="text" placeholder="Nombre" formControlName="username">
@@ -19,8 +19,8 @@
                 Registrar
             </button>
 
-            <div *ngIf="message" class="alert">
-                {{ message }}
+            <div *ngIf="serverMessage" class="alert">
+                {{ serverMessage }}
             </div>
         </form>
     </div>

@@ -4,30 +4,22 @@
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
                 <!-- Login -->
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" (click)="goToSection('login')">
-                        Login
-                    </a>
+                    <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
                 </li>
 
                 <!-- Registro -->
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#" (click)="goToSection('register')">
-                        Registro
-                    </a>
+                    <a class="nav-link" routerLink="/register" routerLinkActive="active">Registro</a>
                 </li>
 
                 <!-- Lista de artículos -->
                 <li class="nav-item">
-                    <a class="nav-link" href="#" (click)="goToSection('article-list')">
-                        Lista de artículos
-                    </a>
+                    <a class="nav-link" routerLink="/article/list" routerLinkActive="active">Lista de artículos</a>
                 </li>
 
                 <!-- Crear artículo -->
                 <li class="nav-item">
-                    <a class="nav-link" href="#" (click)="goToSection('article-new')">
-                        Crear artículo
-                    </a>
+                    <a class="nav-link" routerLink="/article/create" routerLinkActive="active">Crear artículo</a>
                 </li>
             </ul>
 
@@ -38,6 +30,12 @@
                     Buscar
                 </button>
             </form> -->
+
+            <ng-container *ngIf="isLogged()">
+                <button class="btn btn-danger" (click)="logout()">
+                    Logout
+                </button>
+            </ng-container>
         </div>
     </div>
 </nav>

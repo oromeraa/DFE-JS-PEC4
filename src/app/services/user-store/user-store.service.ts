@@ -20,13 +20,4 @@ export class UserStoreService {
   removeToken(): void {
     localStorage.removeItem(this.tokenKey);
   }
-
-  logout(): void {
-    this.removeToken();
-  }
-
-  isLogged(): boolean {
-    return this.getToken() !== null;
-  }
-
 }

@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
-import { Article, ArticleQuantityChange } from '../model/article';
+import { Article, ArticleQuantityChange } from '../../model/article';
 
 @Component({
     selector: 'app-article-item',
@@ -18,7 +18,7 @@ export class ArticleItemComponent {
     decreaseQuantity(): void {
         this.quantityChange.emit({ article: this.article, changeInQuantity: -1 });
     }
-    
+
     // Boton para alternar el estado de oferta (DEBUG)
     // toggleOnSale(): void {
     //     this.article.isOnSale = !this.article.isOnSale;

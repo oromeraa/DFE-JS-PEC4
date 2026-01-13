@@ -6,19 +6,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { ArticleItemComponent } from './article-item/article-item.component';
-import { ArticleListComponent } from './article-list/article-list.component';
+import { ArticleItemComponent } from './articles/article-item/article-item.component';
+import { ArticleListComponent } from './articles/article-list/article-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { ArticleNewTemplateComponent } from './article-new-template/article-new-template.component';
-import { ArticleNewReactiveComponent } from './article-new-reactive/article-new-reactive.component';
+import { ArticleNewTemplateComponent } from './articles/article-new-template/article-new-template.component';
+import { ArticleNewReactiveComponent } from './articles/article-new-reactive/article-new-reactive.component';
 
-import { DefaultImagePipe } from './default-image/default-image.pipe';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { ArticleDetailComponent } from './article-detail/article-detail.component';
-import { UserService } from './user/user.service';
-import { UserStoreService } from './user-store/user-store.service';
-import { articleAppInterceptor } from './article-app/article-app.interceptor';
+import { DefaultImagePipe } from './model/default-image/default-image.pipe';
+import { LoginComponent } from './users/login/login.component';
+import { RegisterComponent } from './users/register/register.component';
+import { ArticleDetailComponent } from './articles/article-detail/article-detail.component';
+import { UserService } from './services/user/user.service';
+import { UserStoreService } from './services/user-store/user-store.service';
+import { articleAppInterceptor } from './services/article-app/article-app.interceptor';
+import { AppRoutesModule } from './app-routes.module';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { articleAppInterceptor } from './article-app/article-app.interceptor';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutesModule
   ],
   providers: [UserService,
     UserStoreService,

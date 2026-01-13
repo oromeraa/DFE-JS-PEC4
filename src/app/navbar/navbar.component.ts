@@ -1,4 +1,5 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
+import { UserStoreService } from '../services/user-store/user-store.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,13 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 
 export class NavbarComponent {
-  @Output() toSection = new EventEmitter<string>();
+  constructor(private userStore: UserStoreService) { }
 
-  goToSection(section: string): void {
-    this.toSection.emit(section);
+  isLogged(): boolean {
+    return this.userStore.isLogged();
+  }
+
+  logout() {
+    this.userStore.logout();
   }
 }

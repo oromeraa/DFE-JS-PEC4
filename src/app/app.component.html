@@ -177,43 +177,17 @@
 
 <main class="main">
   <div class="header">
-    <app-navbar (toSection)="goToSection($event)"></app-navbar>
+    <app-navbar></app-navbar>
   </div>
 
   <div class="content">
-
-    <div *ngIf="currentSection === 'login' && isLoggedIn()">
-      <h2><strong>Logueado correctamente</strong></h2>
-
-      <button class="btn btn-outline-success" type="submit" (click)="logout()">
-        Logout
-      </button>
-    </div>
-
-    <div *ngIf="currentSection === 'login' && !isLoggedIn()">
-      <app-login></app-login>
-    </div>
-
-    <div *ngIf="currentSection === 'register'">
-      <app-register></app-register>
-    </div>
-
-    <div *ngIf="currentSection === 'article-list'">
-      <app-article-list></app-article-list>
-    </div>
-
-    <div *ngIf="currentSection === 'article-new'">
-      <app-article-new-reactive></app-article-new-reactive>
-    </div>
-
-
+    <router-outlet></router-outlet>
   </div>
 
   <div class="footer">
     <p>2026 Romera Aller, Omar</p>
     <p>FELIZ AÑO NUEVO</p>
   </div>
-
 </main>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

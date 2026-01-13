@@ -27,4 +27,12 @@ export class UserService {
   register(newUser: { username: string, password: string }): Observable<any> {
     return this.http.post(`${this.apiRegister}`, newUser);
   }
+
+  logout(): void {
+    this.userStoreService.removeToken();
+  }
+
+  isLogged(): boolean {
+    return this.userStoreService.getToken() !== null;
+  }
 }

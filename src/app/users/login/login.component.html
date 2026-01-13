@@ -1,8 +1,9 @@
 <div class="form-container">
     <h1 class="h3 mb-3 fw-normal">Iniciar sesión</h1>
 
-    <div class="form-group">
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div *ngIf="!isLogged()" class="form-group">
+
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
 
             <div class="form-floating" id="username-login">
                 <input class="form-control" id="username" type="text" placeholder="Username" formControlName="username">
@@ -19,9 +20,13 @@
                 Login
             </button>
 
-            <div *ngIf="serverMessage">
+            <div *ngIf="serverMessage" class="alert">
                 {{ serverMessage }}
             </div>
         </form>
+    </div>
+
+    <div *ngIf="isLogged()">
+        <h1 class="h4 mb-3 fw-normal">Ya estas logueado</h1>
     </div>
 </div>

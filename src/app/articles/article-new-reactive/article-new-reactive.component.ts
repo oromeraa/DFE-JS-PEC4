@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Validators, FormBuilder } from '@angular/forms';
 import { ValidatorFn, AbstractControl } from '@angular/forms';
-import { ArticleServiceService } from '../article-service/article-service.service';
+import { ArticleServiceService } from '../../services/article-service/article-service.service';
 
 @Component({
   selector: 'app-article-new-reactive',

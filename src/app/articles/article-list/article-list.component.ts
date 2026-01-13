@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { Article, ArticleQuantityChange } from '../model/article';
+import { Article, ArticleQuantityChange } from '../../model/article';
 import { Observable, Subject } from 'rxjs';
 import { startWith, switchMap } from 'rxjs/operators';
-import { ArticleServiceService } from '../article-service/article-service.service';
+import { ArticleServiceService } from '../../services/article-service/article-service.service';
 
 @Component({
     selector: 'app-article-list',

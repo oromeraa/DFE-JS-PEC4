@@ -1,18 +1,16 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Validators, FormBuilder } from '@angular/forms';
-import { ValidatorFn, AbstractControl } from '@angular/forms';
-import { UserService } from '../user/user.service';
-
+import { UserService } from '../../services/user/user.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrl: './register.component.css'
 })
-export class LoginComponent {
+export class RegisterComponent {
 
-  public loginForm!: FormGroup;
+  public registerForm!: FormGroup;
 
   constructor(
     private fb: FormBuilder,
@@ -22,7 +20,7 @@ export class LoginComponent {
   }
 
   createForm() {
-    this.loginForm = this.fb.group({
+    this.registerForm = this.fb.group({
       username: new FormControl('', [
         Validators.required,
         Validators.pattern('^[!a-zA-Z0-9]+$')
@@ -35,16 +33,17 @@ export class LoginComponent {
     );
   }
 
+  message: string = '';
   serverMessage: string = '';
 
-  onSubmit() {
-    if (this.loginForm.valid) {
-      this.userService.login(this.loginForm.value).subscribe({
+  onRegister() {
+    if (this.registerForm.valid) {
+      this.userService.register(this.registerForm.value).subscribe({
         next: () => {
-          console.log('Logueado correctamente');
+          this.message = 'Registrado correctamente';
         },
         error: (err) => {
-          console.error('Error al loguear:', err);
+          this.message = 'Error al registrar';
           this.serverMessage = err.error.msg;
         }
       }
