@@ -1,6 +1,6 @@
-<div class="article-card" [class.on-sale]="article.isOnSale">
+<!-- <div class="article-card" [class.on-sale]="article.isOnSale">
 
-    <a [routerLink]="/articles/{{article.id}}" routerLinkActive="active">
+    <a routerLink="/article/{{ article.id }}">
         <img [src]="article.imageUrl | defaultImage" [alt]="article.name" class="product-img">
     </a>
 
@@ -10,7 +10,6 @@
         '1.2-2' }}</p>
 
     <div *ngIf="article.isOnSale" class="quantity-controls">
-        <!-- Desactivar botón cuando la cantidad es 0 -->
         <button class="btn btn-secondary rounded-circle justify-content-center lh-1" (click)="decreaseQuantity()"
             [disabled]="article.quantityInCart === 0">-</button>
 
@@ -18,5 +17,32 @@
 
         <button class="btn btn-secondary rounded-circle justify-content-center lh-1"
             (click)="increaseQuantity()">+</button>
+    </div>
+</div> -->
+
+<div class="card" [class.on-sale]="article.isOnSale" style="width: 18rem;">
+
+    <a routerLink="/article/{{ article.id }}">
+        <img class="card-img-top" [src]="article.imageUrl | defaultImage" [alt]="article.name">
+    </a>
+
+    <div class="card-body">
+        <h5 [ngClass]="{ 'not-on-sale': !article.isOnSale }" class="card-title">{{ article.name }}</h5>
+        <p [ngClass]="{ 'not-on-sale': !article.isOnSale }" class="price card-text">{{ article.price | currency: 'EUR' :
+            'symbol' :
+            '1.2-2' }}</p>
+
+        <div *ngIf="article.isOnSale" class="quantity-controls">
+            <button class="btn btn-secondary rounded-circle btn-sm" (click)="decreaseQuantity()"
+                [disabled]="article.quantityInCart === 0">
+                -
+            </button>
+
+            <span class="quantity">{{ article.quantityInCart }}</span>
+
+            <button class="btn btn-secondary rounded-circle btn-sm" (click)="increaseQuantity()">
+                +
+            </button>
+        </div>
     </div>
 </div>

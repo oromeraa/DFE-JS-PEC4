@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UserStoreService } from '../services/user-store/user-store.service';
+import { UserService } from '../services/user/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,13 +8,13 @@ import { UserStoreService } from '../services/user-store/user-store.service';
 })
 
 export class NavbarComponent {
-  constructor(private userStore: UserStoreService) { }
+  constructor(private userService: UserService) { }
 
   isLogged(): boolean {
-    return this.userStore.isLogged();
+    return this.userService.isLogged();
   }
 
   logout() {
-    this.userStore.logout();
+    this.userService.logout();
   }
 }

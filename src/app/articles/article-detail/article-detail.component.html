@@ -1,1 +1,15 @@
-<p>article-detail works!</p>
+<div class="justify-content-center" id="articleDetail" *ngIf="article$ | async as article">
+
+    <h2 class="uppercase">{{ article.name }}</h2>
+
+    <img [src]="article.imageUrl | defaultImage" [alt]="article.name" width="200">
+
+    <p>Precio: {{ article.price | currency:'EUR':'symbol' }}</p>
+
+    <p>Estado: {{ article.isOnSale ? 'En venta' : 'No disponible' }}</p>
+
+    <button routerLink="/article/list">
+        Volver al catálogo
+    </button>
+
+</div>

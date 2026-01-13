@@ -1,10 +1,7 @@
-.article-card {
-    border: 2px solid gray;
+.card {
     background-color: gray;
-    padding: 20px;
-    border-radius: 8px;
-    width: 250px;
-    height: 400px;
+    padding: 5px;
+    min-height: 450px;
     text-align: center;
     margin: 10px;
 }
@@ -14,7 +11,6 @@
     height: auto;
 }
 
-/* Cambia a verde en caso de estas disponible */
 .on-sale {
     background-color: beige;
 }
@@ -28,9 +24,3 @@
     height: 30px;
     margin: 0 10px;
 }
-/* 
-.debug button {
-    width: fit-content;
-    height: 30px;
-    margin: 0 10px;
-} */

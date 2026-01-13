@@ -20,6 +20,10 @@ export class ArticleServiceService {
     return this.http.get<Article[]>(`${this.apiArticles}?q=${name}`);
   }
 
+  getArticleById(articleID: string): Observable<Article> {
+    return this.http.get<Article>(`${this.apiArticles}/${articleID}`);
+  }
+
   changeQuantity(articleID: number, changeInQuantity: number): Observable<any> {
     const patchProperty = { changeInQuantity: changeInQuantity };
     return this.http.patch(`${this.apiArticles}/${articleID}`, patchProperty);
