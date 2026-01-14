@@ -16,6 +16,7 @@ NOTA: en una PEC anterior utilicé una api de exchange rates para convertir mone
 Creado esqueleto de componentes, servicios y interceptores. La api de usuarios en el enunciado la entendí mal, es /api/user/login y /api/user/register no /user/login y /user/register. Login y Registro funcionan. Guardamos token correctamente. Interceptor funciona. El routing hecho, se ha rehecho el navbar para usarlo con routerLink y además se ha añadido el botón de logout. Se ha rematado con la protección de rutas. También se ha modificado la función de logout para que redirija a la página de login o sino podia permanecer en páginas protegidas.
 
 HECHO -> NOTA: un logout estaría bien implementar.
-
 ## Ejercicio 5
+Módulos realizados. Resetructuración del proyecto. Primero me he encontrado un problema con el defaultImage, se estaba duplicando la instancia. Luego he tenido un problema con el routing en la web de Login y Register, era poque en el navbar se llamaba a rutas viejas sin el "/user" delante.
 ## Conclusiones
+Esta vez me siento más cómodo con Angular. A los días de acabar la PEC3 me quedó sensación de que realmente estaba todo muy hecho y que se automatizaba todo. Pero ahora con esta práctica me he dado cuenta que se programa mucho. Angular sólo es un kit de herramientas para facilitarte la programación. Pero se programa y mucho. Te permite hacer buenos proyectos, más organizados, más escalables y más mantenibles. Muy contento la verdad. 
