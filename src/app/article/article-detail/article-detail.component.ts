@@ -19,4 +19,5 @@ export class ArticleDetailComponent {
   private articleId: string | null = this.activatedRoute.snapshot.paramMap.get('id');
 
   public article$: Observable<Article> | null = this.articleId ? this.articleService.getArticleById(this.articleId) : null;
+
 }

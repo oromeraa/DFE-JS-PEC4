@@ -1,25 +1,3 @@
-<!-- <div class="article-card" [class.on-sale]="article.isOnSale">
-
-    <a routerLink="/article/{{ article.id }}">
-        <img [src]="article.imageUrl | defaultImage" [alt]="article.name" class="product-img">
-    </a>
-
-    <h3>{{ article.name }}</h3>
-
-    <p [ngClass]="{ 'not-on-sale': !article.isOnSale }" class="price">{{ article.price | currency: 'EUR' : 'symbol' :
-        '1.2-2' }}</p>
-
-    <div *ngIf="article.isOnSale" class="quantity-controls">
-        <button class="btn btn-secondary rounded-circle justify-content-center lh-1" (click)="decreaseQuantity()"
-            [disabled]="article.quantityInCart === 0">-</button>
-
-        <span class="quantity">{{ article.quantityInCart }}</span>
-
-        <button class="btn btn-secondary rounded-circle justify-content-center lh-1"
-            (click)="increaseQuantity()">+</button>
-    </div>
-</div> -->
-
 <div class="card" [class.on-sale]="article.isOnSale" style="width: 18rem;">
 
     <a routerLink="/article/{{ article.id }}">
