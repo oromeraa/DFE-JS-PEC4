@@ -7,10 +7,9 @@ import { ArticleNewReactiveComponent } from './article-new-reactive/article-new-
 import { AuthGuard } from '../guards/auth.guard';
 
 const routes: Routes = [
-  { path: 'article-item', component: ArticleItemComponent },
-  { path: 'article-detail', component: ArticleDetailComponent },
-  { path: 'article-list', component: ArticleListComponent },
-  { path: 'article-new-reactive', component: ArticleNewReactiveComponent, canActivate: [AuthGuard] }
+  { path: 'list', component: ArticleListComponent },
+  { path: 'create', component: ArticleNewReactiveComponent, canActivate: [AuthGuard] },
+  { path: ':id', component: ArticleDetailComponent }
 ];
 
 @NgModule({
