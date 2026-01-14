@@ -8,7 +8,6 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
-import { DefaultImagePipe } from './model/default-image/default-image.pipe';
 import { UserService } from './services/user/user.service';
 import { UserStoreService } from './services/user-store/user-store.service';
 import { articleAppInterceptor } from './services/article-app/article-app.interceptor';
@@ -18,8 +17,7 @@ import { AuthGuard } from './guards/auth.guard';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    DefaultImagePipe
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
